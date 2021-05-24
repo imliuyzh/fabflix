@@ -8,13 +8,13 @@ Please visit the [wiki](https://github.com/imliuyzh/fabflix/wiki) for more infor
 ## AWS Deployment
 
 ## Built With
-### Front-End
+### Front end
 + Bootstrap
 + jQuery
   + Ajax Autocomplete for jQuery
 + Line Awesome
 
-### Back-End
+### Back end
 + Apache Tomcat
   + Java Servlet
 + Gson
