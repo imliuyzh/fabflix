@@ -1,5 +1,5 @@
 # Fabflix
-Please visit [wiki](https://github.com/imliuyzh/fabflix/wiki) for more information about this project.
+Please visit the [wiki](https://github.com/imliuyzh/fabflix/wiki) for more information about this project.
 
 ## Getting Started
 
@@ -12,19 +12,21 @@ Please visit [wiki](https://github.com/imliuyzh/fabflix/wiki) for more informati
 + Bootstrap
 + jQuery
   + Ajax Autocomplete for jQuery
-+ 
++ Line Awesome
 
 ### Back-End
 + Apache Tomcat
   + Java Servlet
-+ FLAMINGO Toolkit
 + Gson
 + Jasypt
 + MySQL
+  + FLAMINGO Toolkit
 + OkHttp
 
 ### Others
++ Adobe Photoshop
 + Amazon Elastic Compute Cloud (EC2)
++ GIMP
 + Git
 + Google Cloud Platform
   + reCAPTCHA
