@@ -5,7 +5,7 @@ Please visit the [wiki](https://github.com/imliuyzh/fabflix/wiki) for more infor
 
 ## Running the Application
 
-## AWS Deployment
+### Deploying to AWS
 
 ## Built With
 ### Front end
