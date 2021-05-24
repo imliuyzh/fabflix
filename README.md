@@ -7,7 +7,7 @@ Please visit the [wiki](https://github.com/imliuyzh/fabflix/wiki) for more infor
 
 ### Deploying to AWS
 
-## Built With
+## Built with
 ### Front end
 + Bootstrap
 + jQuery
