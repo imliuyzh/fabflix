@@ -7,5 +7,5 @@
 ## Built With
 
 ## Contributors
-+ @imliuyzh
-+ @anonymousanteater
++ (@imliuyzh)[https://github.com/imliuyzh]
++ (@anonymousanteater)[https://github.com/anonymousanteater]
