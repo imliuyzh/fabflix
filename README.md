@@ -5,7 +5,7 @@ Please visit the [wiki](https://github.com/imliuyzh/fabflix/wiki) for more infor
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Alternatively, you can always use the link above to run the application.
 
 ### Running the Application
-The only supported environment is Ubuntu v20.04+, Tomcat v9.0+, MySQL v8.0+, and Java v11+.
+The only supported environment is Ubuntu v20.04+, Tomcat v9.0+, MySQL v8.0+, Java v11+, and IntelliJ IDEA.
 
 #### Setup MySQL and Tomcat
 
