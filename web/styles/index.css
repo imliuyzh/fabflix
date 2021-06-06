@@ -1,0 +1,222 @@
+main
+{
+    overflow-y: scroll;
+}
+
+#movie-list-nav-group-items
+{
+    display: flex;
+    justify-content: center;
+}
+
+#prev-button, #next-button
+{
+    background-color: rgba(47, 47, 47, 0.3);
+    cursor: pointer;
+    font-size: 12.5px;
+    font-weight: 600;
+    margin: 0 72px;
+    padding: 8px 16px;
+}
+
+#movie-list-container
+{
+    padding: 56px 0;
+    position: relative;
+}
+
+#movie-list
+{
+    min-height: 538px;
+}
+
+#no-result-message
+{
+    color: #c8c8c8;
+    font-size: 14px;
+    font-style: italic;
+    margin: 0 36px;
+}
+
+.movie
+{
+    display: grid;
+    gap: 36px;
+    grid-template-columns: 1fr 10fr;
+    margin: 24px 72px 56px;
+}
+
+.info
+{
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.genres
+{
+    color: #49484e;
+    font-size: 12.5px;
+    font-weight: bold;
+}
+
+.genre
+{
+    color: #49484e;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.genre:hover
+{
+    color: #49484e;
+    text-decoration: none;
+}
+
+.movie-title
+{
+    font-size: 48px;
+    letter-spacing: -2px;
+    transition: all 0.3s;
+}
+
+.movie-title:hover
+{
+    color: #f7e63b;
+}
+
+.movie-title-link
+{
+    color: #ffffff;
+    font-weight: bolder;
+    margin: 14px 0;
+}
+
+.movie-title-link:hover
+{
+    color: #f7e63b;
+    text-decoration: none;
+}
+
+.year
+{
+    color: #9c9c9c;
+    font-size: 18px;
+    margin-left: 18px;
+}
+
+.rating-and-credit
+{
+    display: flex;
+    gap: 36px;
+}
+
+.rating
+{
+    align-items: center;
+    background-color: #5abcb9;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+}
+
+.score
+{
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+.num-of-votes
+{
+    font-size: 10px;
+}
+
+.credits
+{
+    background-color: rgba(47, 47, 47, 0.3);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.credit
+{
+    color: #626069;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: 12.5px;
+    padding: 0 12px;
+}
+
+.credit-icon
+{
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.credit-name, .credit a
+{
+    color: #626069;
+}
+
+.credit a:hover
+{
+    color: #626069;
+    text-decoration: none;
+}
+
+.poster
+{
+    display: block;
+    width: 154px;
+}
+
+.purchase
+{   
+    background-color: #f7e63b;
+    color: #49484e;
+    font-size: 18px;
+    font-weight: lighter;
+    padding: 6px;
+    text-align: center;
+    transition: all 0.6s;
+}
+
+.purchase:hover
+{
+    background-color: #f7e63b;
+    color: #49484e;
+    cursor: pointer;
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+.cart-messages
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-success-message
+{
+    color: #49484e;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.cart-error-message, .filter-modal-error-message
+{
+    color: #de0019;
+    font-size: 12px;
+    font-style: italic;
+}

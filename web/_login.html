@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="icon" href="images/favicon.png" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="styles/_login.css">
+
+        <title>Content Portal</title>
+    </head>
+
+    <body>
+        <aside></aside>
+        <main>
+            <img src="images/logo.png" id="fabflix-logo">
+            <form id="login-form" method="post" action="api/login">
+                <div class="group">
+                    <label for="email">Email</label>
+                    <i class="bi bi-person"></i>
+                    <input type="text" name="email" class="control" id="email">
+                </div>
+                
+                <div class="group">
+                    <label for="password">Password</label>
+                    <i class="bi bi-key"></i>
+                    <input type="password" name="password" class="control" id="password">
+                </div>
+                
+                <div class="g-recaptcha" id="recaptcha" data-sitekey="6LcpoMIaAAAAAF6nzT6N5kN7ipmcgrSF7I_ryxF9" data-theme="dark"></div>
+                
+                <button type="submit">Login</button>
+            </form>
+            <div id="error-messages"></div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="scripts/_login.js" type="module"></script>
+    </body>
+</html>

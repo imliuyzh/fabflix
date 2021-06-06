@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="icon" href="images/favicon.png" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        <link rel="stylesheet" href="styles/sidebar.css">
+        <link rel="stylesheet" href="styles/index.css">
+
+        <title>Fabflix</title>
+    </head>
+
+    <body>
+        <aside>
+            <a href="" id="logo-link">
+                <div id="logo-container">
+                    <img src="images/logo.png" id="fabflix-logo">
+                </div>
+            </a>
+            
+            <form id="search-form">
+                <div class="form-group search-control">
+                    <label for="title-input" class="category-header">Title</label>
+                    <input type="text" id="title-input" name="title-input">
+                </div>
+                <div class="form-group search-control">
+                    <label for="year-input" class="category-header">Year</label>
+                    <input type="number" id="year-input" name="year-input" min="1888" max="9999" step="1" />
+                </div>
+                <div class="form-group search-control">
+                    <label for="director-input" class="category-header">Director</label>
+                    <input type="text" id="director-input" name="director-input">
+                </div>
+                <div class="form-group search-control">
+                    <label for="star-input" class="category-header">Star</label>
+                    <input type="text" id="star-input" name="star-input">
+                </div>
+                <div class="search-control" id="search-button-container">
+                    <button type="submit" id="search-button">
+                        <i class="las la-search" id="search-icon"></i>&nbsp;Search
+                    </button>
+                </div>
+                <div id="search-error-messages"></div>
+            </form>
+        </aside>
+        
+        <main>
+            <nav>
+                <div id="nav-group">
+                    <button class="nav-group-item" id="browse-button">
+                        <i class="las la-film"></i>&nbsp;Browse
+                    </button>
+                    <a href="cart.html" class="nav-group-item">
+                        <i class="las la-shopping-cart"></i>&nbsp;Checkout
+                    </a>
+                    <button class="nav-group-item" id="filter-button">
+                         <i class="las la-filter"></i>&nbsp;Filter
+                    </button>
+                </div>
+                
+                <div class="modal fade" id="browse-modal">
+                    <div class="modal-dialog modal-dialog-centered" data-backdrop="static" data-keyboard="false" tabindex="-1">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Browse</h5>
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span>&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="browse-menu">
+                                    <label class="category-header">Genre</header>
+                                    <ul class="list" id="genre-list"></ul>
+                                </div>
+                                <div class="browse-menu">
+                                    <label class="category-header">Title</header>
+                                    <ul class="list" id="title-list"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal fade" id="filter-modal">
+                    <div class="modal-dialog modal-dialog-centered" data-backdrop="static" data-keyboard="false" tabindex="-1">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Settings</h5>
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span>&times;</span>
+                                </button>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <form>
+                                    <div class="setting-menu">
+                                        <label class="category-header">Sort</header>
+                                        <div class="form-group">
+                                            <select class="form-control" id="sort-by-1-options">
+                                                <option value="title" selected>Title</option>
+                                                <option value="rating">Rating</option>
+                                            </select>
+                                            
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="sort-order-1-options" id="sort-order-1-asc" value="ASC" checked>
+                                              <label class="form-check-label" for="sort-order-1-asc">Ascending</label>
+                                            </div>
+                                            
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="sort-order-1-options" id="sort-order-1-desc" value="DESC">
+                                              <label class="form-check-label" for="sort-order-1-desc">Descending</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control" id="sort-by-2-options">
+                                                <option value="title">Title</option>
+                                                <option value="rating" selected>Rating</option>
+                                            </select>
+
+                                           <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="sort-order-2-options" id="sort-order-2-asc" value="ASC">
+                                              <label class="form-check-label" for="sort-order-2-asc">Ascending</label>
+                                            </div>
+                                            
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="sort-order-2-options" id="sort-order-2-desc" value="DESC" checked>
+                                              <label class="form-check-label" for="sort-order-2-desc">Descending</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="setting-menu form-group">
+                                        <label class="category-header">Results per Page</header>
+                                        <select class="form-control" id="results-per-page-options">
+                                            <option value="10">10</option>
+                                            <option value="25" selected>25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </div>
+                                </form>
+                                
+                                <div id="filter-modal-errors"></div>
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" id="filter-apply-button">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="movie-list-container">
+                <section id="movie-list"></section>
+                <div id="movie-list-nav-group-items">
+                    <a href="" class="nav-group-item" id="prev-button">
+                        <i class="las la-angle-left"></i>&nbsp;Previous
+                    </a>
+                    <a href="" class="nav-group-item" id="next-button">
+                        <i class="las la-angle-right"></i>&nbsp;Next
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js" integrity="sha512-uxCwHf1pRwBJvURAMD/Gg0Kz2F2BymQyXDlTqnayuRyBFE7cisFCh2dSb1HIumZCRHuZikgeqXm8ruUoaxk5tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+        <script src="scripts/index.js" type="module"></script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <link rel="icon" href="images/favicon.png" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        <link rel="stylesheet" href="styles/_movie.css">
+        
+        <title>New Movie</title>
+    </head>
+    
+    <body>
+        <main>
+            <a href="_dashboard">
+                <img src="images/logo.png" id="fabflix-logo">
+            </a>
+            <h1 id="header">New Movie</h1>
+            <form id="movie-form" method="post" action="api/movie">
+                <section>
+                    <div class="group">
+                        <label for="title-input">Title*</label>
+                        <input type="text" name="title-input" class="control" id="title-input" required />
+                    </div>
+                    <div class="group">
+                        <label for="movie-year-input">Year*</label>
+                        <input type="number" name="movie-year-input" class="control" id="movie-year-input" min="0" max="9999" step="1" required />
+                    </div>
+                    <div class="group">
+                        <label for="director-input">Director*</label>
+                        <input type="text" name="director-input" class="control" id="director-input" required />
+                    </div>
+                </section>
+                
+                <section id="star-section">
+                    <div class="group">
+                        <label for="star-name-input">Star Name*</label>
+                        <input type="text" name="star-name-input" class="control" id="star-name-input" required />
+                    </div>
+                    <div class="group">
+                        <label for="birth-year-input">Year of Birth</label>
+                        <input type="number" name="birth-year-input" class="control" id="birth-year-input" min="0" max="9999" step="1" />
+                    </div>
+                </section>
+                
+                <section id="genre-section">
+                    <div class="group">
+                        <label for="genre-input">Genre*</label>
+                        <input type="text" name="genre-input" class="control" id="genre-input" required />
+                    </div>
+                </section>
+                
+                <button type="submit">Submit</button>
+            </form>
+            <div id="messages"></div>
+        </main>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+        <script src="scripts/_movie.js" type="module"></script>
+    </body>
+</html>

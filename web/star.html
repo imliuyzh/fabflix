@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="icon" href="images/favicon.png" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        <link rel="stylesheet" href="styles/sidebar.css">
+        <link rel="stylesheet" href="styles/star.css">
+
+        <title></title>
+    </head>
+
+    <body>
+        <aside>
+            <a href="" id="logo-link">
+                <div id="logo-container">
+                    <img src="images/logo.png" id="fabflix-logo">
+                </div>
+            </a>
+            
+            <form id="search-form">
+                <div class="form-group search-control">
+                    <label for="title-input" class="category-header">Title</label>
+                    <input type="text" id="title-input" name="title-input">
+                </div>
+                <div class="form-group search-control">
+                    <label for="year-input" class="category-header">Year</label>
+                    <input type="number" id="year-input" name="year-input" min="1888" max="2021" step="1" />
+                </div>
+                <div class="form-group search-control">
+                    <label for="director-input" class="category-header">Director</label>
+                    <input type="text" id="director-input" name="director-input">
+                </div>
+                <div class="form-group search-control">
+                    <label for="star-input" class="category-header">Star</label>
+                    <input type="text" id="star-input" name="star-input">
+                </div>
+                <div class="search-control" id="search-button-container">
+                    <button type="submit" id="search-button">
+                        <i class="las la-search" id="search-icon"></i>&nbsp;Search
+                    </button>
+                </div>
+                <div id="search-error-messages"></div>
+            </form>
+        </aside>
+
+        <main>
+            <nav>
+                <div id="nav-group">
+                    <button class="nav-group-item" id="browse-button">
+                        <i class="las la-film"></i>&nbsp;Browse
+                    </button> 
+                    <a href="cart.html" class="nav-group-item">
+                        <i class="las la-shopping-cart"></i>&nbsp;Checkout
+                    </a>
+                </div>
+                
+                <div class="modal fade" id="browse-modal">
+                    <div class="modal-dialog modal-dialog-centered" data-backdrop="static" data-keyboard="false" tabindex="-1">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Browse</h5>
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span>&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="browse-menu">
+                                    <label class="category-header">Genre</header>
+                                    <ul class="list" id="genre-list"></ul>
+                                </div>
+                                <div class="browse-menu">
+                                    <label class="category-header">Title</header>
+                                    <ul class="list" id="title-list"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            
+            <section id="summary">
+                <img src="images/person.png" id="portrait" />
+                <div id="biography">
+                    <div class="star-info" id="birthyear-info">
+                        <i class="las la-birthday-cake"></i>
+                        <span id="birthyear"></span>
+                    </div>
+                    <div id="star-name-container">
+                        <a href="" id="star-name"></a>
+                    </div>
+                    <div id="links">
+                        <a href="" id="google-link" class="star-info">
+                            <i class="lab la-google"></i>
+                            <span>Google</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js" integrity="sha512-uxCwHf1pRwBJvURAMD/Gg0Kz2F2BymQyXDlTqnayuRyBFE7cisFCh2dSb1HIumZCRHuZikgeqXm8ruUoaxk5tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+        <script src="scripts/star.js" type="module"></script>
+    </body>
+</html>

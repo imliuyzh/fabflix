@@ -1,0 +1,10 @@
+USE moviedb;
+CREATE INDEX movies_year_index ON movies (year);
+CREATE INDEX movies_director_index ON movies (director);
+CREATE INDEX movies_id_index ON movies (id);
+CREATE INDEX ratings_movieId_index ON ratings (movieId);
+CREATE INDEX stars_in_movies_movieId_index ON stars_in_movies (movieId);
+CREATE INDEX stars_id_index ON stars (id);
+CREATE INDEX stars_name_index ON stars (name);
+CREATE INDEX genres_id_index ON genres (id);
+CREATE INDEX genres_in_movies_movieId_index ON genres_in_movies (movieId);
