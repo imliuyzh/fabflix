@@ -1,3 +1,5 @@
+<img src="demo.gif">
+
 # Fabflix
 Please visit the [wiki](https://github.com/imliuyzh/fabflix/wiki) for more information about this project.
 
