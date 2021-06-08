@@ -18,18 +18,21 @@ The only supported environment is Ubuntu v20.04+, Tomcat v9.0+, MySQL v8.0+, Jav
 2. ```sudo apt install mysql-server```
 3. ```sudo mysql_secure_installation```
 4. Press "Y"
-5. Set the password and press "Y"
+5. Set the password and keep pressing "Y"
 6. `mysql -u root -p`
 7. `CREATE USER 'testuser'@'localhost' IDENTIFIED WITH mysql_native_password BY '122Baws@ICS';`
 8. `GRANT ALL PRIVILEGES ON * . * TO 'testuser'@'localhost';`
 9. `quit`
 
 ##### Create the `moviedb` Database
-1. `cd` into your project root directory and execute `wget` to fetch data files
+1. Fetch data files
+   + `cd` into `src/main/sql`
    + `wget https://grape.ics.uci.edu/wiki/public/raw-attachment/wiki/cs122b-2019-winter-project1/movie-data.sql`
+   + `cd` into `src/main/java/com/flixster/xml/parser`
    + `wget http://infolab.stanford.edu/pub/movies/mains243.xml`
    + `wget http://infolab.stanford.edu/pub/movies/actors63.xml`
    + `wget http://infolab.stanford.edu/pub/movies/casts124.xml`
+   + `cd` back into project root directory
 2. `mysql -u testuser -p`
 3. `\. src/main/sql/createtable.sql`
 4. `\. src/main/sql/movie-data.sql`
@@ -46,7 +49,8 @@ The only supported environment is Ubuntu v20.04+, Tomcat v9.0+, MySQL v8.0+, Jav
 15. `mysql -u testuser -p`
 16. `\. src/main/sql/stored-procedure.sql`
 17. `\. src/main/sql/createindexes.sql`
-18. Set up FLAMINGO Toolkit to enable efficient fuzzy search
+18. `quit`
+19. Set up FLAMINGO Toolkit to enable efficient fuzzy search
     + `wget http://flamingo.ics.uci.edu/toolkit/toolkit_2021-05-18.tgz`
     + Unpack the file
     + `sudo apt install gcc make mysql-server libmysqlclient-dev`
@@ -129,25 +133,24 @@ The only supported environment is Ubuntu v20.04+, Tomcat v9.0+, MySQL v8.0+, Jav
 ### Work Distribution
 Item | Contributor
 ------------ | -------------
-AWS Deployment | imliuyzh, AnonymousAnteater
-SQL Scripts | imliuyzh, AnonymousAnteater
+Autocomplete | imliuyzh
+Checkout Back End | AnonymousAnteater, imliuyzh
+Checkout Front End | AnonymousAnteater, imliuyzh
+Dashboard | imliuyzh
+HTTPS | AnonymousAnteater, imliuyzh
+Full-Text & Fuzzy Search | imliuyzh, AnonymousAnteater
+Login Back End | imliuyzh, AnonymousAnteater
+Login Front End | imliuyzh
+Login Filter |imliuyzh
+Movie Page Back End |imliuyzh, AnonymousAnteater
+Movie Page Front End | imliuyzh, AnonymousAnteater
+Password Encryption | AnonymousAnteater
+Portrait | imliuyzh, AnonymousAnteater
+Poster | imliuyzh, AnonymousAnteater
+reCAPTCHA | imliuyzh
 Search Front End | imliuyzh
 Search Back End |imliuyzh, AnonymousAnteater
-Login Filter |imliuyzh
-Movie Page Front End | imliuyzh, AnonymousAnteater
-Movie Page Back End |imliuyzh, AnonymousAnteater
+SQL Scripts | imliuyzh, AnonymousAnteater
 Star Page Front end | imliuyzh
 Star Page Back End |imliuyzh, AnonymousAnteater
-Poster | imliuyzh, AnonymousAnteater
-Portrait | imliuyzh, AnonymousAnteater
-Checkout Front End | AnonymousAnteater, imliuyzh
-Checkout Back End | AnonymousAnteater, imliuyzh
-Login Front End | imliuyzh
-Login Back End | imliuyzh, AnonymousAnteater
-reCAPTCHA | imliuyzh
-Adding HTTPS | imliuyzh, AnonymousAnteater
-Password Encryption | AnonymousAnteater
-Dashboard | imliuyzh
-XML Parsing | imliuyzh, AnonymousAnteater
-Full-Text & Fuzzy Search | imliuyzh, AnonymousAnteater
-Autocomplete | imliuyzh
+XML Parsing | AnonymousAnteater, imliuyzh
