@@ -142,11 +142,11 @@ Movie Page Back End |imliuyzh, AnonymousAnteater
 Movie Page Front End | imliuyzh, AnonymousAnteater
 Password Encryption | AnonymousAnteater
 Portrait | imliuyzh, AnonymousAnteater
-Poster | imliuyzh, AnonymousAnteater
+Poster | AnonymousAnteater, imliuyzh
 reCAPTCHA | imliuyzh
 Search Front End | imliuyzh
 Search Back End |imliuyzh, AnonymousAnteater
-SQL Scripts | imliuyzh, AnonymousAnteater
+SQL Scripts | AnonymousAnteater, imliuyzh
 Star Page Front end | imliuyzh
 Star Page Back End |imliuyzh, AnonymousAnteater
 XML Parsing | AnonymousAnteater, imliuyzh
