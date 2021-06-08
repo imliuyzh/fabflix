@@ -131,7 +131,7 @@ Item | Contributor
 ------------ | -------------
 Autocomplete | imliuyzh
 Checkout Back End | AnonymousAnteater, imliuyzh
-Checkout Front End | AnonymousAnteater, imliuyzh
+Checkout Front End | imliuyzh, AnonymousAnteater
 Dashboard | imliuyzh
 HTTPS | AnonymousAnteater, imliuyzh
 Full-Text & Fuzzy Search | imliuyzh, AnonymousAnteater
