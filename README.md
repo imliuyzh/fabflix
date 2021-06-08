@@ -47,20 +47,20 @@ The only supported environment is Ubuntu v20.04+, Tomcat v9.0+, MySQL v8.0+, Jav
 16. `\. src/main/sql/stored-procedure.sql`
 17. `\. src/main/sql/createindexes.sql`
 18. Set up FLAMINGO Toolkit to enable efficient fuzzy search
-   + `wget http://flamingo.ics.uci.edu/toolkit/toolkit_2021-05-18.tgz`
-   + Unpack the file
-   + `sudo apt install gcc make mysql-server libmysqlclient-dev`
-   + `cd` into the unpacked folder
-   + `make`
-   + `sudo cp libed*.so /usr/lib/mysql/plugin/`
-   + `sudo service mysql restart`
-   + `mysql -u root -p`
-   + `DROP FUNCTION IF EXISTS ed;`
-   + `CREATE FUNCTION ed RETURNS INTEGER SONAME 'libed.so';`
-   + `DROP FUNCTION IF EXISTS edrec;`
-   + `CREATE FUNCTION edrec RETURNS INTEGER SONAME 'libedrec.so';`
-   + `DROP FUNCTION IF EXISTS edth;`
-   + `CREATE FUNCTION edth RETURNS INTEGER SONAME 'libedth.so';`
+    + `wget http://flamingo.ics.uci.edu/toolkit/toolkit_2021-05-18.tgz`
+    + Unpack the file
+    + `sudo apt install gcc make mysql-server libmysqlclient-dev`
+    + `cd` into the unpacked folder
+    + `make`
+    + `sudo cp libed*.so /usr/lib/mysql/plugin/`
+    + `sudo service mysql restart`
+    + `mysql -u root -p`
+    + `DROP FUNCTION IF EXISTS ed;`
+    + `CREATE FUNCTION ed RETURNS INTEGER SONAME 'libed.so';`
+    + `DROP FUNCTION IF EXISTS edrec;`
+    + `CREATE FUNCTION edrec RETURNS INTEGER SONAME 'libedrec.so';`
+    + `DROP FUNCTION IF EXISTS edth;`
+    + `CREATE FUNCTION edth RETURNS INTEGER SONAME 'libedth.so';`
 
 #### Install Tomcat
 1. ```sudo apt update```
