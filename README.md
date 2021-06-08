@@ -127,10 +127,6 @@ The only supported environment is Ubuntu v20.04+, Tomcat v9.0+, MySQL v8.0+, Jav
 + Ubuntu
 
 ## Contributors
-+ [@imliuyzh](https://github.com/imliuyzh)
-+ [@anonymousanteater](https://github.com/anonymousanteater)
-
-### Work Distribution
 Item | Contributor
 ------------ | -------------
 Autocomplete | imliuyzh
