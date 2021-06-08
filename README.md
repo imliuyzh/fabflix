@@ -24,7 +24,7 @@ The only supported environment is Ubuntu v20.04+, Tomcat v9.0+, MySQL v8.0+, Jav
 8. `GRANT ALL PRIVILEGES ON * . * TO 'testuser'@'localhost';`
 9. `quit`
 
-#### Create the `moviedb` Database
+##### Create the `moviedb` Database
 1. `cd` into your project root directory and execute `wget` to fetch data files
    + `wget https://grape.ics.uci.edu/wiki/public/raw-attachment/wiki/cs122b-2019-winter-project1/movie-data.sql`
    + `wget http://infolab.stanford.edu/pub/movies/mains243.xml`
