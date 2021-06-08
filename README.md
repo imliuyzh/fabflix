@@ -9,20 +9,90 @@ These instructions will get you a copy of the project up and running on your loc
 ### Running the Application
 The only supported environment is Ubuntu v20.04+, Tomcat v9.0+, MySQL v8.0+, Java v11+, and IntelliJ IDEA.
 
-#### Setup MySQL and Tomcat
+#### Install Java and Maven
+1. `sudo apt update`
+2. `sudo apt install openjdk-11-jdk maven`
 
-#### Create a MySQL Database on the development machine
+#### Install MySQL
+1. ```sudo apt update```
+2. ```sudo apt install mysql-server```
+3. ```sudo mysql_secure_installation```
+4. Press "Y"
+5. Set the password and press "Y"
+6. `mysql -u root -p`
+7. `CREATE USER 'testuser'@'localhost' IDENTIFIED WITH mysql_native_password BY '122Baws@ICS';`
+8. `GRANT ALL PRIVILEGES ON * . * TO 'testuser'@'localhost';`
+9. `quit`
+
+#### Create the `moviedb` Database
+1. `cd` into your project root directory and execute `wget` to fetch data files
+   + `wget https://grape.ics.uci.edu/wiki/public/raw-attachment/wiki/cs122b-2019-winter-project1/movie-data.sql`
+   + `wget http://infolab.stanford.edu/pub/movies/mains243.xml`
+   + `wget http://infolab.stanford.edu/pub/movies/actors63.xml`
+   + `wget http://infolab.stanford.edu/pub/movies/casts124.xml`
+2. `mysql -u testuser -p`
+3. `\. src/main/sql/createtable.sql`
+4. `\. src/main/sql/movie-data.sql`
+5. `\. src/main/sql/addvalues.sql`
+6. `quit`
+7. `mvn clean`
+8. `mvn exec:java -Dexec.cleanupDaemonThreads=false -Dexec.mainClass="com.flixster.password.UpdateSecurePassword"`
+9. `mvn clean`
+10. `mvn exec:java -Dexec.cleanupDaemonThreads=false -Dexec.mainClass="com.flixster.xml.parser.MainsParser"`
+11. `mvn clean`
+12. `mvn exec:java -Dexec.cleanupDaemonThreads=false -Dexec.mainClass="com.flixster.xml.parser.ActorsParser"`
+13. `mvn clean`
+14. `mvn exec:java -Dexec.cleanupDaemonThreads=false -Dexec.mainClass="com.flixster.xml.parser.CastsParser"`
+15. `mysql -u testuser -p`
+16. `\. src/main/sql/stored-procedure.sql`
+17. `\. src/main/sql/createindexes.sql`
+18. Set up FLAMINGO Toolkit to enable efficient fuzzy search
+   + `wget http://flamingo.ics.uci.edu/toolkit/toolkit_2021-05-18.tgz`
+   + Unpack the file
+   + `sudo apt install gcc make mysql-server libmysqlclient-dev`
+   + `cd` into the unpacked folder
+   + `make`
+   + `sudo cp libed*.so /usr/lib/mysql/plugin/`
+   + `sudo service mysql restart`
+   + `mysql -u root -p`
+   + `DROP FUNCTION IF EXISTS ed;`
+   + `CREATE FUNCTION ed RETURNS INTEGER SONAME 'libed.so';`
+   + `DROP FUNCTION IF EXISTS edrec;`
+   + `CREATE FUNCTION edrec RETURNS INTEGER SONAME 'libedrec.so';`
+   + `DROP FUNCTION IF EXISTS edth;`
+   + `CREATE FUNCTION edth RETURNS INTEGER SONAME 'libedth.so';`
+
+#### Install Tomcat
+1. ```sudo apt update```
+2. ```sudo apt install tomcat9 tomcat9-admin```
+3. Wait for a second and you should see Tomcat is on port 8080: `ss -ltn`
+4. ```sudo ufw allow from any to any port 8080 proto tcp```
+5. Go to http://127.0.0.1:8080 and you should see the "It works!" page
+6. `sudo vim /etc/tomcat9/tomcat-users.xml`
+7. Add this block before `</tomcat-users>` and remember to change the password
+    ```
+    <role rolename="admin-gui"/>
+    <role rolename="manager-gui"/>
+    <user username="tomcat" password="your_password" roles="admin-gui,manager-gui"/>
+    ```
+8. `sudo systemctl restart tomcat9`
+9. Wait and put in the username and password in http://127.0.0.1:8080/manager/html
+   + You should see the Web Application Manager afterward
 
 #### Setup IDE on the development machine
-
-### Deploying to AWS
-Go to AWS Console to sign up. You will need to enter a valid credit card. Don't worry; as long as you choose a free-tier instance and remove it after the end of the quarter, you will not be charged. When you are done, log in to the AWS console.
-Launch a new Ubuntu 20.04 free-tier t2.micro EC2 instance. Notice that you need to generate and download a key to ssh to the machine, and it may take a few minutes for the instance to be initialized.
-After the instance is running, you will see a public IP address assigned to it. Keep this IP: you are required to give us this IP to demo project 1.
-When viewing the list of instances, you can click on the "connect" button, on the top to get instructions on how to use SSH to connect to the instance. By default, only the SSH port, 22, is open. In order to get other services (e.g., HTTP, HTTPS, and Tomcat) to be available to other machines, you will need to open the corresponding ports. To do so, when the instance is checked, select the security group, go to the "inbound" tab, and add more rules.
-The name of the instance you will be launching is: `Ubuntu Server 20.04 LTS (HVM), SSD Volume Type`.
-
-After this, please follow the steps in "Running the Application."
+1. Clone Fabflix into your device: ```git clone https://github.com/UCI-Chenli-teaching/cs122b-spring21-team-20.git```
+2. Create `Keys.java` in `src/main/java` and put in your reCAPTCHA secret key and TMDb API key
+   + Follow [this](https://morweb.org/support-post/set-up-google-recaptcha) to set up reCAPTCHA
+     + Remember to add "localhost" into the domains
+   + You need to register a TMDb account and follow [this](https://www.themoviedb.org/documentation/api) to get an API key from TMDb
+    ```
+    public class Keys 
+    {
+        public static final String RECAPTHCA_SECRET_KEY = "";
+        public static final String POSTER_SECRET_KEY = "";
+    }
+    ```
+3. Follow the instructions [here](https://github.com/imliuyzh/fabflix/wiki/Project-1:-Setup-AWS,-MySQL,-JDBC,-Tomcat,-Start-Fabflix#setup-ide-on-the-development-machine) (Ignore "Create Project in IntelliJ")
 
 ## Built with
 ### Front end
@@ -55,3 +125,29 @@ After this, please follow the steps in "Running the Application."
 ## Contributors
 + [@imliuyzh](https://github.com/imliuyzh)
 + [@anonymousanteater](https://github.com/anonymousanteater)
+
+### Work Distribution
+Item | Contributor
+------------ | -------------
+AWS Deployment | imliuyzh, AnonymousAnteater
+SQL Scripts | imliuyzh, AnonymousAnteater
+Search Front End | imliuyzh
+Search Back End |imliuyzh, AnonymousAnteater
+Login Filter |imliuyzh
+Movie Page Front End | imliuyzh, AnonymousAnteater
+Movie Page Back End |imliuyzh, AnonymousAnteater
+Star Page Front end | imliuyzh
+Star Page Back End |imliuyzh, AnonymousAnteater
+Poster | imliuyzh, AnonymousAnteater
+Portrait | imliuyzh, AnonymousAnteater
+Checkout Front End | AnonymousAnteater, imliuyzh
+Checkout Back End | AnonymousAnteater, imliuyzh
+Login Front End | imliuyzh
+Login Back End | imliuyzh, AnonymousAnteater
+reCAPTCHA | imliuyzh
+Adding HTTPS | imliuyzh, AnonymousAnteater
+Password Encryption | AnonymousAnteater
+Dashboard | imliuyzh
+XML Parsing | imliuyzh, AnonymousAnteater
+Full-Text & Fuzzy Search | imliuyzh, AnonymousAnteater
+Autocomplete | imliuyzh
