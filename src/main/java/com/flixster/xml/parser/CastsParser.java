@@ -19,7 +19,7 @@ import com.flixster.xml.parser.entity.StarInMovie;
 
 public class CastsParser extends DefaultHandler
 {
-    public static final String XML_FILE = "/home/ubuntu/casts124.xml";
+    public static final String XML_FILE = "casts124.xml";   // Change the file directory here
     public static final String MOVIE = "m";
     public static final String FILM_ID = "f";
     public static final String ACTOR = "a";
