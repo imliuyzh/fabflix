@@ -15,7 +15,7 @@ import com.flixster.xml.parser.entity.Star;
 
 public class ActorsParser extends DefaultHandler
 {
-    public static final String XML_FILE = "/home/ubuntu/actors63.xml";
+    public static final String XML_FILE = "actors63.xml";   // Change the file directory here
     public static final String ACTOR = "actor";
     public static final String NAME = "stagename";
     public static final String BIRTH_YEAR = "dob";
