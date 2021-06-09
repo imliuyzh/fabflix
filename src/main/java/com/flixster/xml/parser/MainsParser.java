@@ -16,7 +16,7 @@ import com.flixster.xml.parser.entity.Film;
 
 public class MainsParser extends DefaultHandler
 {
-    public static final String XML_FILE = "/home/ubuntu/mains243.xml";
+    public static final String XML_FILE = "mains243.xml";   // Change the file directory here
     public static final String DIR_NAME = "dirn";
     public static final String FILM = "film";
     public static final String TITLE = "t";
