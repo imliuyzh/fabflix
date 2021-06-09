@@ -28,11 +28,11 @@ The only supported environment is Ubuntu v20.04+, Tomcat v9.0+, MySQL v8.0+, Jav
 1. Fetch data files
    + `cd` into `src/main/sql`
    + `wget https://grape.ics.uci.edu/wiki/public/raw-attachment/wiki/cs122b-2019-winter-project1/movie-data.sql`
-   + `cd` into `src/main/java/com/flixster/xml/parser`
+     + Put `BEGIN;` before the first line and `COMMIT;` after the last line to speed up the data insertion process
+   + `cd` into the project root directory
    + `wget http://infolab.stanford.edu/pub/movies/mains243.xml`
    + `wget http://infolab.stanford.edu/pub/movies/actors63.xml`
    + `wget http://infolab.stanford.edu/pub/movies/casts124.xml`
-   + `cd` back into project root directory
 2. `mysql -u testuser -p`
 3. `\. src/main/sql/createtable.sql`
 4. `\. src/main/sql/movie-data.sql`
