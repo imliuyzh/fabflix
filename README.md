@@ -1,7 +1,7 @@
 <img src="demo.gif">
 
 # Fabflix
-Please visit the [wiki](https://github.com/imliuyzh/fabflix/wiki) for more information about this project.
+A Java EE web application with high scalability allowing customers to search and purchase over 20,000 movies with the response time under 500ms. It also allows employees to add new records for stars and movies through a XML file or a front end interface. Please visit the [wiki](https://github.com/imliuyzh/fabflix/wiki) for more information about this project.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Alternatively, you can always use the link above to run the application.
